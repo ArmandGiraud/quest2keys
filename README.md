@@ -3,3 +3,8 @@
 
 ## Install
 
+```pip install .```
+
+Download the spacy model
+ ```python -m spacy download fr_core_news_md```
+ 
