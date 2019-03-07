@@ -7,6 +7,10 @@
 
 Download the spacy model
  ```python -m spacy download fr_core_news_md```
+<br/>
+for a light version
+  ```python -m spacy download fr_core_news_sm```
+ 
 
 ## Usage:
 ```python

@@ -9,7 +9,7 @@ setup(name='quest2keys',
       author_email='armand.giraud.ag@gmail.com',
       license='MIT',
       install_requires=[
-          'spacy==2.0.5',
+          'spacy>2.0.5',
       ],
       tests_require=["pytest"],
       classifiers=[
