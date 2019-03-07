@@ -34,7 +34,7 @@ class SpacyExtractor():
     def load_model(self):
         """utility to load spacy trained model"""
         try:
-            self.loader = spacy.load(self.model_name)
+            self.loader = spacy.load(self.model_name, disable  = ['parser', 'ner'])
         except FileNotFoundError as e:
             print("Model {} not found\nplease try $python -m spacy download {}"\
                 .format(self.model_name, self.model_name))
