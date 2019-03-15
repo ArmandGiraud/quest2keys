@@ -14,11 +14,20 @@ __status__ = "Dev"
 ## using spacy as a dependency: requires spacy 2.0 and fr_core_news_sm model
 
 import spacy
+import re
 
 #https://spacy.io/api/annotation
 
 SPACY_FILTER_HARD = ["NOUN", "PROPN", "VERB", "X"]
 SPACY_FILTER_SOFT = ["NOUN", "PROPN", "VERB", "X", "ADJ", "ADV"]
+
+REGEX_ARTICLE = re.compile(u"(?:R|L|D)\d{1,4}(?:-\d{1,2})?(?:-\d{1,2})?")
+
+def has_article(string):
+    if re.search(REGEX_ARTICLE, string):
+        return True
+    else:
+        return False
 
 
 class SpacyExtractor():
@@ -40,10 +49,13 @@ class SpacyExtractor():
                 .format(self.model_name, self.model_name))
             print(e)
 
-
     def filter_sent_spacy(self, sent):
         """filter input string based on tags in filters"""
         assert type(sent) == str, "sent input should be string"
+        
+        if has_article(sent):
+            return sent
+        
         doc = self.loader(sent)
         return " ".join([tok.text for tok in doc if tok.pos_ in self.filt]).strip()
 

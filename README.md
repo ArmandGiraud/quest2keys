@@ -11,7 +11,6 @@ Download the spacy model
 for a light version
   ```python -m spacy download fr_core_news_sm```
  
-
 ## Usage:
 ```python
 from quest2keys.extract_keywords import SpacyExtractor

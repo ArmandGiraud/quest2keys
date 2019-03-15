@@ -22,3 +22,16 @@ def test_hard():
     string = sh.filter_sent_spacy(test_string)
     answer = 'eu accident travail souhaite connaitre droits'
     assert string == answer
+
+def test_regex():
+    string = "Section 1 : Missions Articles L7234-1 à D7234-2 R234-34-9 de la des comment quand"
+    out_string = ss.filter_sent_spacy(string)
+    assert out_string == string
+
+
+
+if __name__ == "__main__":
+    test_regex()
+    test_hard()
+    test_soft()
+
