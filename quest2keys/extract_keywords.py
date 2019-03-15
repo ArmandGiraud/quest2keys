@@ -21,7 +21,7 @@ import re
 SPACY_FILTER_HARD = ["NOUN", "PROPN", "VERB", "X"]
 SPACY_FILTER_SOFT = ["NOUN", "PROPN", "VERB", "X", "ADJ", "ADV"]
 
-REGEX_ARTICLE = re.compile(u"(?:R|L|D)\d{1,4}(?:-\d{1,2})?(?:-\d{1,2})?") 
+REGEX_ARTICLE = re.compile(u"(?:R|L|D|r|l|d)\d{1,4}(?:-\d{1,2})?(?:-\d{1,2})?") 
 # see https://regex101.com/r/ewzrsG/1
 
 def has_article(string):

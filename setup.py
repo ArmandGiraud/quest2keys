@@ -2,7 +2,7 @@
 from setuptools import setup, find_packages
 
 setup(name='quest2keys',
-      version='0.2',
+      version='0.3',
       description='transform question to keywords',
       url='https://github.com/ArmandGiraud/quest2keys',
       author='Armand Giraud',
